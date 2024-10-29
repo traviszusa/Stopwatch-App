@@ -98,13 +98,13 @@ public class MainActivity extends AppCompatActivity {
         }
         isRunning = false;
         startPauseButton.setText("Start");
-        timerText.setText(remainingTime + ""); // Menampilkan waktu saat dihentikan
+        timerText.setText(remainingTime + "");
     }
 
     private void resetTimer() {
         stopTimer();
         remainingTime = 0;
-        timerText.setText("0"); // Mengatur timer ke 0
+        timerText.setText("0");
         startPauseButton.setText("Start");
     }
 
@@ -116,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
             try {
                 while (remainingTime > 0 && !isCancelled()) {
                     if (!isPaused) {
-                        publishProgress(remainingTime); // Update UI
+                        publishProgress(remainingTime);
                         remainingTime--;
-                        Thread.sleep(1000); // Tunggu 1 detik
+                        Thread.sleep(1000);
                     }
                 }
             } catch (InterruptedException e) {
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     private void triggerAlarm() {
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator != null && vibrator.hasVibrator()) {
-            vibrator.vibrate(500); // Getar selama 500 ms
+            vibrator.vibrate(1000);
         }
         Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
