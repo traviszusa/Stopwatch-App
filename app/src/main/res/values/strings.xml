@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Timer App</string>
+    <string name="enter_time_in_seconds">Enter time in seconds</string>
+    <string name="timer">Timer</string>
+</resources>
